@@ -24,4 +24,7 @@
     max-width: 100px;
     
 }
-
+/* Responsive */
+@media (max-width:992px) {
+    
+}
