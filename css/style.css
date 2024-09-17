@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#add-post-btn{
+    position: fixed;
+    bottom: 5%;
+    right: 7%;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 30px;
+}
+.form-control:focus{
+    outline: green !important;
+    border-color: green !important;
+    box-shadow: 0 0 0 .25rem rgba(13, 253, 49, 0.147) !important;
+}
+
+
+/* Custom-Classes */
+.max-width-100{
+    max-width: 100px;
+    
+}
+
