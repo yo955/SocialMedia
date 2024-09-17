@@ -12,7 +12,7 @@
   
   
   function postClicked(postId){
-        window.location = `./PostDetails.html?postId=${postId}`
+        window.location = `PostDetails.html?postId=${postId}`
       }
   
 
