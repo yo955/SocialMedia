@@ -15,7 +15,7 @@
   <!-- Axios Library -->
   <script src="node_modules/axios/dist/axios.min.js"></script>
   <!-- Axios Library -->
-  <title>HomePage</title>
+  <title>Profile</title>
 </head>
 
 <body>
@@ -151,8 +151,8 @@
   </div>
   <!-- AddPostModals -->
 
-   <!-- DletePostModals  -->
-   <div class="modal fade" id="delete-post-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- DletePostModals  -->
+  <div class="modal fade" id="delete-post-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -168,7 +168,8 @@
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
             Close
           </button>
-          <button id="edit-post-btn" type="button" class="btn btn-danger" onclick="confirmPOstDelete()">Yes, Delete</button>
+          <button id="edit-post-btn" type="button" class="btn btn-danger" onclick="confirmPOstDelete()">Yes,
+            Delete</button>
         </div>
       </div>
     </div>
@@ -179,12 +180,6 @@
   <!--///// Alert ///// -->
   <div id="successAlert" class="show fade" style="position: fixed; z-index: 3; width: 30%; bottom: 0;right: 0;"></div>
   <!--///// Alert //// -->
-
-  <!-- Loader -->
-   <div class="loader-container">
-      <div class="loader" id="loaderId"></div>
-   </div>
-  <!-- Loader -->
 
   <!-- NavBar -->
   <div class="container d-flex justify-content-center">
@@ -211,49 +206,88 @@
               data-bs-target="#register-modal">
               Register
             </button>
-          </div> 
+          </div>
           <!-- Profile Img -->
           <div class="d-flex justify-content-end align-items-center" id="logout-div" style="flex: 1;">
             <div id="img-user-nav">
-              <img loading="lazy" src="/imgs/user.png" alt="..." class="rounded-circle" style="width: 80px;height: 80px;">
+              <img loading="lazy" src="/imgs/user.png" alt="..." class="rounded-circle"
+                style="width: 80px;height: 80px;">
             </div>
             <b id="nav-user">
               @ username
             </b>
             <button type="button" class="btn btn-outline-danger mx-2" data-bs-toggle="modal"
-              data-bs-target="#logout-modal"
-              >
+              data-bs-target="#logout-modal">
               Logout
             </button>
           </div>
       </nav>
       <button id="add-post-btn" class="d-flex justify-content-center align-items-center  btn btn-primary"
-      onclick="AddBtnClicked()">
+        onclick="AddBtnClicked()">
         +
       </button>
     </div>
   </div>
-  <!-- NavBar -->
+  <!-- Navbar -->
+
 
   <!-- Card Container -->
   <div id="Card-container" class="container d-flex justify-content-center mt-3">
     <div class="col-9">
-      <div id="posts">
-        <!-- Content -->`
+      <div id="main-content"
+        class="row align-items-start bg-body-tertiary shadow-lg p-3 mb-5 bg-body-tertiary rounded d-flex justify-content-evenly align-items-center">
+        <div class="col">
+          <img id="user-img" src="imgs/user.png" alt="user" class="rounded-circle" style="width: 130px;height: 130px;">
+        </div>
+        <div class="col ">
+          <div class="information  d-flex flex-column  ">
+            <h5 id="email">Joo@gmail.com</h5>
+            <h5 id="name">Joo</h5>
+            <h5 id="username">Joo2001</h5>
+          </div>
+        </div>
+
+        <div class="posts col  d-flex flex-column">
+          <h5><span style="font-size: 50px;" id="posts-count">0</span> <span style="color: #aeaeae;">Posts</span></h5>
+          <h5><span style="font-size: 50px;" id="Comments-count">0</span> <span style="color: #aeaeae;">Comments</span>
+          </h5>
+
+        </div>
+
       </div>
     </div>
   </div>
   <!-- Card Container -->
 
-  <!-- Script Tags -->
-
-     <!-- MAin Script Tag -->
-      <script src="main.js"></script>
-     <!-- MAin Script Tag -->
-
-
-  <!-- Script Tags -->
+<!-- post-title -->
  
+ <div id="Card-container" class="container d-flex justify-content-center ">
+  <div class="col-9">
+      <h2><span id="name-posts">joo </span>Posts</h2>
+  </div>
+</div>
+<!-- post-title -->
+
+  <!-- Posts -->
+  <div id="Card-container" class="container d-flex justify-content-center mt-3">
+    <div class="col-9">
+      <div id="user-posts">
+        <!-- content -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- // Posts // -->
+
+  <!-- MAin Script Tag -->
+  <script src="main.js"></script>
+  <!-- MAin Script Tag -->
+
+  <!-- Private Script -->
+  <script src="profile.js"></script>
+  <!-- Private Script -->
+
 </body>
 
 </html>
