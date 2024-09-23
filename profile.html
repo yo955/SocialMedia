@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/css/style.css" />
   <!-- BootStrab Links-->
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <!-- BootStrab Links-->
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
   <!-- FontAwesome -->
   <!-- Axios Library -->
-  <script src="node_modules/axios/dist/axios.min.js"></script>
+  <script src="../node_modules/axios/dist/axios.min.js"></script>
   <!-- Axios Library -->
   <title>Profile</title>
 </head>
@@ -177,6 +177,12 @@
   <!-- DletePostModals -->
   <!-- =======Modals====== -->
 
+    <!-- Loader -->
+    <div class="loader-container">
+      <div class="loader" id="loaderId"></div>
+   </div>
+  <!-- Loader -->
+
   <!--///// Alert ///// -->
   <div id="successAlert" class="show fade" style="position: fixed; z-index: 3; width: 30%; bottom: 0;right: 0;"></div>
   <!--///// Alert //// -->
@@ -186,14 +192,14 @@
     <div class="col-9">
       <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-lg p-3 mb-5 bg-body-tertiary rounded">
         <div class="container-fluid pt-2">
-          <a class="navbar-brand" href="/">I-Top</a>
+          <a class="navbar-brand" href="/home.html">I-Top</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="max-width: 40%;">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link active" aria-current="page" href="/home.html">Home</a>
               <a class="nav-link" style="cursor: pointer;" onclick="profileClicked()">Profile</a>
             </div>
           </div>
@@ -210,7 +216,7 @@
           <!-- Profile Img -->
           <div class="d-flex justify-content-end align-items-center" id="logout-div" style="flex: 1;">
             <div id="img-user-nav">
-              <img loading="lazy" src="/imgs/user.png" alt="..." class="rounded-circle"
+              <img loading="lazy" src="../imgs/user.png" alt="..." class="rounded-circle"
                 style="width: 80px;height: 80px;">
             </div>
             <b id="nav-user">
@@ -237,7 +243,7 @@
       <div id="main-content"
         class="row align-items-start bg-body-tertiary shadow-lg p-3 mb-5 bg-body-tertiary rounded d-flex justify-content-evenly align-items-center">
         <div class="col">
-          <img id="user-img" src="imgs/user.png" alt="user" class="rounded-circle" style="width: 130px;height: 130px;">
+          <img id="user-img" src="../imgs/user.png" alt="user" class="rounded-circle" style="width: 130px;height: 130px;">
         </div>
         <div class="col ">
           <div class="information  d-flex flex-column  ">
@@ -281,11 +287,11 @@
   <!-- // Posts // -->
 
   <!-- MAin Script Tag -->
-  <script src="main.js"></script>
+  <script src="/MainLogic.js"></script>
   <!-- MAin Script Tag -->
 
   <!-- Private Script -->
-  <script src="profile.js"></script>
+  <script src="/js/profile.js"></script>
   <!-- Private Script -->
 
 </body>

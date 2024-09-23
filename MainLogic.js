@@ -10,14 +10,14 @@ UpdateUi();
 function profileClicked () {
   const user = CurrentUser();
   const userId = user.id;
-  window.location = `profile.html?userId=${userId}`
+  window.location =  `/profile.html?userId=${userId}`
 }
 function postClicked(postId){
-  window.location = `PostDetails.html?postId=${postId}`
+  window.location = `./html/PostDetails.html?postId=${postId}`
 }
 
 function UserClicked (userId){
-window.location = `profile.html?userId=${userId}`
+window.location = `/profile.html?userId=${userId}`
 }
 
 // Loader 
@@ -252,14 +252,14 @@ function UpdateUi() {
     if(add_post_btn != null){
       add_post_btn.style.setProperty("display", "none", "important");
     }
-    ShowLoader(false);
+    // ShowLoader(false);
   } else {  // === User is login 
     login_div.style.setProperty("display", "none", "important");
     logout_div.style.setProperty("display", "flex", "important");
     if(add_post_btn != null){
       add_post_btn.style.setProperty("display", "block", "important");
     }
-    ShowLoader(false);
+    // ShowLoader(false);
     const user = CurrentUser();
     document.getElementById('nav-user').innerHTML = user.name;
     if (user.profile_image) {
@@ -341,7 +341,6 @@ function confirmPOstDelete (){
   .then((respone)=>{
    ShowLoader(false);
     showAlert("The post has been deleted successfully", "success"); 
-  
     getPosts();
   })
   .catch((error)=>{
@@ -350,8 +349,9 @@ function confirmPOstDelete (){
     : "delete"; 
 
     showAlert(messageError, "danger"); 
+  }).finally(()=>{
+    CloseModal("delete-post-modal");
   })
-  CloseModal("delete-post-modal");
 }
 
 // Show the post modal when the "Edit Post" or "Create Post" buttons are clicked

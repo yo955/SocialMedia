@@ -35,10 +35,13 @@ ShowUser();
 
 function ShowPosts (){
 const limit = 6;
-const URL = `${bathUrl}/users/${ID}/posts?${limit}`;
+const URL = `${bathUrl}/users/${ID}/posts?limit=${limit}`;
+ShowLoader(true);
 axios
 .get(URL)
 .then(function (response) {
+  ShowLoader(false);
+
   let posts = response.data.data; 
   let content = "";
 
