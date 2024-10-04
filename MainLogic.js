@@ -13,7 +13,7 @@ function profileClicked () {
   window.location =  `/profile.html?userId=${userId}`
 }
 function postClicked(postId){
-  window.location = `./html/PostDetails.html?postId=${postId}`
+  window.location = `/PostDetails.html?postId=${postId}`
 }
 
 function UserClicked (userId){
