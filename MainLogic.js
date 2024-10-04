@@ -179,13 +179,14 @@ const handleRegisterbtn = () => {
       localStorage.setItem("user", JSON.stringify(user)); 
       showAlert("User registered successfully", "success"); 
       UpdateUi();
-      getPost(); 
-      CloseModal("register-modal"); 
+      getPosts(); 
     })
     .catch((error) => {
       const errorMessage = error.response.data.message; 
       showAlert(errorMessage, "danger"); 
-    });
+    }).finally(()=>{
+      CloseModal("register-modal");
+    })
 };
 
 // ********** Login ************** 
@@ -252,14 +253,13 @@ function UpdateUi() {
     if(add_post_btn != null){
       add_post_btn.style.setProperty("display", "none", "important");
     }
-    // ShowLoader(false);
+    ShowLoader(false);
   } else {  // === User is login 
     login_div.style.setProperty("display", "none", "important");
     logout_div.style.setProperty("display", "flex", "important");
     if(add_post_btn != null){
       add_post_btn.style.setProperty("display", "block", "important");
     }
-    // ShowLoader(false);
     const user = CurrentUser();
     document.getElementById('nav-user').innerHTML = user.name;
     if (user.profile_image) {
@@ -342,6 +342,9 @@ function confirmPOstDelete (){
    ShowLoader(false);
     showAlert("The post has been deleted successfully", "success"); 
     getPosts();
+    setTimeout(() => {
+      window.location.reload(); // Reload Page  
+    }, 700);
   })
   .catch((error)=>{
     const messageError = error.response
