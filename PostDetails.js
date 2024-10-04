@@ -32,7 +32,7 @@
              <div class="card-img">
                <img src="${postImageSrc}" alt="PostPhoto" class="w-100" />
              </div>
-             <p>${new Date(post.created_at).toLocaleDateString()}</p>
+             <p>${post.created_at}</p>
              <h5 class="card-title">${post.title || 'No Title'}</h5>
              <p class="card-text">${post.body || 'No Content'}</p>
              <hr />
