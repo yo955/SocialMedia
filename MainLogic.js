@@ -107,33 +107,6 @@ function getPosts(page = 1) {
       }
 
         document.getElementById("posts").innerHTML += content; 
-
-   
-      axios
-        .get(`${bathUrl}/tags`)
-        .then((response) => {
-          const tags = response.data.data; 
-
-          posts.forEach((post) => {
-            let tagID = `post-tags-${post.id}`;
-            let tagContent = "";
-
-           
-            for (let tag of tags) {
-              tagContent += `
-                <button class="btn btn-sm rounded-5" style="background-color:gray; color:white">
-                  ${tag.name}
-                </button>
-              `;
-            }
-            document.getElementById(tagID).innerHTML = tagContent; 
-          });
-          isLoading = false; 
-        })
-        .catch(function (error) {
-          console.log(error); 
-          isLoading = false; 
-        });
     })
     .catch(function (error) {
       console.log(error); 
